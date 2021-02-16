@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-dark">
 
 <head>
     <meta charset="UTF-8">
@@ -20,6 +20,13 @@
 
 <body>
     <div class="container p-5">
+        <div class="d-flex justify-content-end">
+            <label id="switch" class="switch">
+                <input type="checkbox" onchange="toggleTheme()" id="slider">
+                <span class="slider round"></span>
+            </label>
+            <!-- <button id="switch" onclick="toggleTheme()">Switch</button> -->
+        </div>
         <h1 class="mb-5 text-center fw-bold">Choix de la période</h1>
         <div class="row d-flex justify-content-center">
             <div class="col-md-3">
@@ -31,14 +38,15 @@
         </div>
         <div class="row my-4">
             <div class="col d-flex justify-content-center">
-                <button id="generate" class="btn btn-dark fw-bold">Générer</button>
+                <button id="generate" class="btn btn-light fw-bold">Générer</button>
             </div>
         </div>
         <hr>
         <div class="row mt-4">
             <div class="col d-flex justify-content-center">
                 <div id="result_box" class="d-none">
-                    <p class="text-center">Ecoute le <span id="pos" class="fw-bold"></span> album de l'année <span id="year" class="fw-bold"></span></p>
+                    <p class="text-center">Ecoute le <span id="pos" class="fw-bold"></span> album de l'année <span
+                            id="year" class="fw-bold"></span></p>
                     <a id="link" href="" target="_blank" class="text-center">RYM Chart</a>
                 </div>
             </div>
