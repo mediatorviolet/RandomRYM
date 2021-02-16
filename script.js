@@ -1,6 +1,8 @@
-var min = document.getElementById('start').value * 1;
-var max = document.getElementById('end').value * 1;
+var min = document.getElementById('min');
+var max = document.getElementById('max');
 var result_box = document.getElementById('result_box');
+var x = 0;
+var y = 0;
 
 const generation = (min, max) => {
     result_box.classList.remove('d-none');
@@ -13,10 +15,20 @@ const generation = (min, max) => {
     pos.innerHTML = position == 1 ? '1er' : position + 'ème';
     year.innerHTML = Math.floor(Math.random() * (max - min + 1) + min);
     link.href = 'https://rateyourmusic.com/charts/top/album/' + year.innerHTML + '/' + page + '/#pos' + position;
-}
+};
 
+
+min.addEventListener('keyup', () => {
+    x = min.value * 1;
+    console.log(x);
+});
+
+max.addEventListener('keyup', () => {
+    y = max.value * 1;
+    console.log(y);
+});
 
 var generate = document.getElementById('generate');
 generate.addEventListener('click', () => {
-    generation(min, max);
+    generation(x, y);
 });
