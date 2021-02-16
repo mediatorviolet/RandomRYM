@@ -1,8 +1,8 @@
 var min = document.getElementById('min');
 var max = document.getElementById('max');
 var result_box = document.getElementById('result_box');
-var x = 0;
-var y = 0;
+var x = min.value * 1;
+var y = max.value * 1;
 
 const generation = (min, max) => {
     result_box.classList.remove('d-none');
