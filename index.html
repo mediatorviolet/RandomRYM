@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RandomRYM</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -38,26 +42,37 @@
         </div>
         <div class="row my-4">
             <div class="col d-flex justify-content-center">
-                <button id="generate" class="btn btn-light fw-bold">Générer</button>
+                <button id="generate" class="btn fw-bold">Générer</button>
             </div>
         </div>
-        <hr>
-        <div class="row mt-4">
+        <div id="result_box" class="row mt-4 d-none">
+            <hr>
             <div class="col d-flex justify-content-center">
-                <div id="result_box" class="d-none">
-                    <p class="text-center">Ecoute le <span id="pos" class="fw-bold"></span> album de l'année <span
+                <div>
+                    <p>Ecoute le <span id="pos" class="fw-bold"></span> album de l'année <span
                             id="year" class="fw-bold"></span></p>
-                    <a id="link" href="" target="_blank" class="text-center">RYM Chart</a>
+                    <a id="link" href="" target="_blank">RYM Chart</a>
                 </div>
             </div>
         </div>
 
-        <!-- Bootstrap JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-            crossorigin="anonymous"></script>
-        <!-- Main JS -->
-        <script src="script.js"></script>
+        <footer class="fixed-bottom d-flex justify-content-center">
+            <!-- Copyright -->
+            <div class="col-1 p-3 text-center">
+                <a class="nav-link" href="https://github.com/mediatorviolet" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+    </div>
+
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <!-- Main JS -->
+    <script src="script.js"></script>
 </body>
 
 </html>
