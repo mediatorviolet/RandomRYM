@@ -8,9 +8,8 @@ import { mainGenres } from "./data/tags"
 
 function App() {
   const [formData, setFormData] = useState([])
-  const [tags, setTags] = useState([])
-  const [selectedTags, setSelectedTags] = useState([])
-  const [urlParams, setUrlParams] = useState()
+  const [tags, setTags] = useState({})
+  const [urlParams, setUrlParams] = useState(null)
 
   const handleFormChange = e => {
     let name = e.target.name
@@ -19,22 +18,12 @@ function App() {
     setFormData({ ...formData, [name]: val })
   }
 
-  // Todo: toggle tags
   const handleTagsChange = e => {
-    let id = e.target.id
-    let val = e.target.value
     let isChecked = e.target.checked
+    let name = e.target.name
 
-    setTags(() => {
-      let i = tags.indexOf(val)
-      if (i === -1) {
-        return [...tags, val]
-      } else {
-        return [...tags.splice(i, 1)]
-      }
-    })
+    setTags({ ...tags, [name]: isChecked })
   }
-  console.log("tags", tags)
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -50,7 +39,12 @@ function App() {
     let page = Math.ceil(position / 40)
     let year = Math.floor(Math.random() * (endYear - startYear + 1) + startYear)
 
-    setUrlParams({ year, position, page, tags })
+    const keys = Object.keys(tags)
+    let activeTags = []
+
+    keys.forEach(key => tags[key] === true && activeTags.push(key))
+
+    setUrlParams({ year, position, page, activeTags })
   }
 
   return (
@@ -64,7 +58,7 @@ function App() {
           year={urlParams.year}
           page={urlParams.page}
           position={urlParams.position}
-          genres={urlParams.tags}
+          genres={urlParams.activeTags}
         />
       )}
     </div>

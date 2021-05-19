@@ -4,7 +4,7 @@ const StyledTextInput = styled.input`
   border: none;
   border-radius: 20px;
   padding: 1rem 2rem;
-  background-color: lightgray;
+  background-color: white;
 `
 
 const TextInput = ({ handleChange, name, placeholder = null }) => (
